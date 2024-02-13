@@ -12,6 +12,7 @@ import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.time.Duration;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -66,13 +67,33 @@ public class GetSsTablesCrash {
         // unset when inserting should stop
         final AtomicBoolean c = new AtomicBoolean(true);
 
-        Executors.newSingleThreadExecutor()
-            .execute(() -> GetSsTablesCrash.insertForever(metrics, c, hostport, maxParallelism));
+        final ScheduledExecutorService executor = Executors.newScheduledThreadPool(2);
+        executor.execute(() -> GetSsTablesCrash.insertForever(metrics, c, hostport, maxParallelism));
+        executor.scheduleWithFixedDelay(() ->
+            {
+                try {
+                    Runtime.getRuntime().exec(
+                        new String[] {
+                            "docker",
+                            "exec",
+                            "crash-test",
+                            "nodetool",
+                            "flush"
+                        }
+                    );
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            },
+            5L,
+            5L,
+            TimeUnit.SECONDS
+        );
 
         // Run nodetool until Scylla crashes.
         Failsafe.with(
             RetryPolicy.<Integer>builder()
-                .withMaxAttempts(300)
+                .withMaxAttempts(-1)
                 .withDelay(Duration.ofSeconds(1))
                 .handleResultIf(result -> result == 0)
                 .build()
@@ -101,6 +122,7 @@ public class GetSsTablesCrash {
 
         Runtime.getRuntime().exec("docker stop crash-test");
         Runtime.getRuntime().exec("docker rm crash-test");
+        executor.shutdown();
     }
 
     public static CqlSession getSession(final int hostport) {
