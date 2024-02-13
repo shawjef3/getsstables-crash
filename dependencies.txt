@@ -1,0 +1,314 @@
+
+> Task :dependencies
+
+------------------------------------------------------------
+Root project 'getsstables-crash'
+------------------------------------------------------------
+
+annotationProcessor - Annotation processors and their dependencies for source set 'main'.
+No dependencies
+
+compileClasspath - Compile classpath for source set 'main'.
++--- com.scylladb:java-driver-query-builder:4.17.0.0
+|    +--- com.scylladb:java-driver-core:4.17.0.0
+|    |    +--- com.datastax.oss:native-protocol:1.5.1
+|    |    +--- io.netty:netty-handler:4.1.94.Final
+|    |    |    +--- io.netty:netty-common:4.1.94.Final
+|    |    |    +--- io.netty:netty-resolver:4.1.94.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.94.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.94.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.94.Final
+|    |    |    +--- io.netty:netty-transport:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.94.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.94.Final (*)
+|    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.94.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.94.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.94.Final
+|    |    |         +--- io.netty:netty-common:4.1.94.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.94.Final (*)
+|    |    |         \--- io.netty:netty-transport:4.1.94.Final (*)
+|    |    +--- com.datastax.oss:java-driver-shaded-guava:25.1-jre-graal-sub-1
+|    |    +--- com.typesafe:config:1.4.1
+|    |    +--- com.github.jnr:jnr-posix:3.1.15
+|    |    |    +--- com.github.jnr:jnr-ffi:2.2.11
+|    |    |    |    +--- com.github.jnr:jffi:1.3.9
+|    |    |    |    +--- org.ow2.asm:asm:9.2
+|    |    |    |    +--- org.ow2.asm:asm-commons:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm-tree:9.2
+|    |    |    |    |    |    \--- org.ow2.asm:asm:9.2
+|    |    |    |    |    \--- org.ow2.asm:asm-analysis:9.2
+|    |    |    |    |         \--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |    +--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |    +--- org.ow2.asm:asm-util:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |    |    \--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |    +--- com.github.jnr:jnr-a64asm:1.0.0
+|    |    |    |    \--- com.github.jnr:jnr-x86asm:1.0.2
+|    |    |    \--- com.github.jnr:jnr-constants:0.10.3
+|    |    +--- org.slf4j:slf4j-api:1.7.26 -> 1.7.30
+|    |    +--- io.dropwizard.metrics:metrics-core:4.1.18
+|    |    |    \--- org.slf4j:slf4j-api:1.7.30
+|    |    +--- org.hdrhistogram:HdrHistogram:2.1.12
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.2
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.2
+|    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.13.2 (c)
+|    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.13.2 (c)
+|    |    |         \--- com.fasterxml.jackson.core:jackson-databind:2.13.2 -> 2.13.2.2 (c)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.2.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.2 (*)
+|    |    +--- org.reactivestreams:reactive-streams:1.0.3
+|    |    +--- com.github.stephenc.jcip:jcip-annotations:1.0-1
+|    |    \--- com.github.spotbugs:spotbugs-annotations:3.1.12
+|    |         \--- com.google.code.findbugs:jsr305:3.0.2
+|    +--- com.datastax.oss:java-driver-shaded-guava:25.1-jre-graal-sub-1
+|    +--- com.github.stephenc.jcip:jcip-annotations:1.0-1
+|    \--- com.github.spotbugs:spotbugs-annotations:3.1.12 (*)
+\--- dev.failsafe:failsafe:3.3.2
+
+compileOnly - Compile-only dependencies for the 'main' feature. (n)
+No dependencies
+
+default - Configuration for default artifacts. (n)
+No dependencies
+
+implementation - Implementation dependencies for the 'main' feature. (n)
++--- com.scylladb:java-driver-query-builder:4.17.0.0 (n)
+\--- dev.failsafe:failsafe:3.3.2 (n)
+
+mainSourceElements - List of source directories contained in the Main SourceSet. (n)
+No dependencies
+
+runtimeClasspath - Runtime classpath of source set 'main'.
++--- com.scylladb:java-driver-query-builder:4.17.0.0
+|    +--- com.scylladb:java-driver-core:4.17.0.0
+|    |    +--- com.datastax.oss:native-protocol:1.5.1
+|    |    +--- io.netty:netty-handler:4.1.94.Final
+|    |    |    +--- io.netty:netty-common:4.1.94.Final
+|    |    |    +--- io.netty:netty-resolver:4.1.94.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.94.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.94.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.94.Final
+|    |    |    +--- io.netty:netty-transport:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.94.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.94.Final (*)
+|    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.94.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.94.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.94.Final
+|    |    |         +--- io.netty:netty-common:4.1.94.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.94.Final (*)
+|    |    |         \--- io.netty:netty-transport:4.1.94.Final (*)
+|    |    +--- com.datastax.oss:java-driver-shaded-guava:25.1-jre-graal-sub-1
+|    |    +--- com.typesafe:config:1.4.1
+|    |    +--- com.github.jnr:jnr-posix:3.1.15
+|    |    |    +--- com.github.jnr:jnr-ffi:2.2.11
+|    |    |    |    +--- com.github.jnr:jffi:1.3.9
+|    |    |    |    +--- org.ow2.asm:asm:9.2
+|    |    |    |    +--- org.ow2.asm:asm-commons:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm-tree:9.2
+|    |    |    |    |    |    \--- org.ow2.asm:asm:9.2
+|    |    |    |    |    \--- org.ow2.asm:asm-analysis:9.2
+|    |    |    |    |         \--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |    +--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |    +--- org.ow2.asm:asm-util:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |    |    \--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |    +--- com.github.jnr:jnr-a64asm:1.0.0
+|    |    |    |    \--- com.github.jnr:jnr-x86asm:1.0.2
+|    |    |    \--- com.github.jnr:jnr-constants:0.10.3
+|    |    +--- org.slf4j:slf4j-api:1.7.26 -> 1.7.30
+|    |    +--- io.dropwizard.metrics:metrics-core:4.1.18
+|    |    |    \--- org.slf4j:slf4j-api:1.7.30
+|    |    +--- org.hdrhistogram:HdrHistogram:2.1.12
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.2
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.2
+|    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.13.2 (c)
+|    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.13.2 (c)
+|    |    |         \--- com.fasterxml.jackson.core:jackson-databind:2.13.2 -> 2.13.2.2 (c)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.2.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.2 (*)
+|    |    +--- org.reactivestreams:reactive-streams:1.0.3
+|    |    +--- com.github.stephenc.jcip:jcip-annotations:1.0-1
+|    |    \--- com.github.spotbugs:spotbugs-annotations:3.1.12
+|    |         \--- com.google.code.findbugs:jsr305:3.0.2
+|    +--- com.datastax.oss:java-driver-shaded-guava:25.1-jre-graal-sub-1
+|    +--- com.github.stephenc.jcip:jcip-annotations:1.0-1
+|    \--- com.github.spotbugs:spotbugs-annotations:3.1.12 (*)
+\--- dev.failsafe:failsafe:3.3.2
+
+runtimeElements - Runtime elements for the 'main' feature. (n)
+No dependencies
+
+runtimeOnly - Runtime-only dependencies for the 'main' feature. (n)
+No dependencies
+
+testAnnotationProcessor - Annotation processors and their dependencies for source set 'test'.
+No dependencies
+
+testCompileClasspath - Compile classpath for source set 'test'.
++--- com.scylladb:java-driver-query-builder:4.17.0.0
+|    +--- com.scylladb:java-driver-core:4.17.0.0
+|    |    +--- com.datastax.oss:native-protocol:1.5.1
+|    |    +--- io.netty:netty-handler:4.1.94.Final
+|    |    |    +--- io.netty:netty-common:4.1.94.Final
+|    |    |    +--- io.netty:netty-resolver:4.1.94.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.94.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.94.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.94.Final
+|    |    |    +--- io.netty:netty-transport:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.94.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.94.Final (*)
+|    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.94.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.94.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.94.Final
+|    |    |         +--- io.netty:netty-common:4.1.94.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.94.Final (*)
+|    |    |         \--- io.netty:netty-transport:4.1.94.Final (*)
+|    |    +--- com.datastax.oss:java-driver-shaded-guava:25.1-jre-graal-sub-1
+|    |    +--- com.typesafe:config:1.4.1
+|    |    +--- com.github.jnr:jnr-posix:3.1.15
+|    |    |    +--- com.github.jnr:jnr-ffi:2.2.11
+|    |    |    |    +--- com.github.jnr:jffi:1.3.9
+|    |    |    |    +--- org.ow2.asm:asm:9.2
+|    |    |    |    +--- org.ow2.asm:asm-commons:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm-tree:9.2
+|    |    |    |    |    |    \--- org.ow2.asm:asm:9.2
+|    |    |    |    |    \--- org.ow2.asm:asm-analysis:9.2
+|    |    |    |    |         \--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |    +--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |    +--- org.ow2.asm:asm-util:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |    |    \--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |    +--- com.github.jnr:jnr-a64asm:1.0.0
+|    |    |    |    \--- com.github.jnr:jnr-x86asm:1.0.2
+|    |    |    \--- com.github.jnr:jnr-constants:0.10.3
+|    |    +--- org.slf4j:slf4j-api:1.7.26 -> 1.7.30
+|    |    +--- io.dropwizard.metrics:metrics-core:4.1.18
+|    |    |    \--- org.slf4j:slf4j-api:1.7.30
+|    |    +--- org.hdrhistogram:HdrHistogram:2.1.12
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.2
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.2
+|    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.13.2 (c)
+|    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.13.2 (c)
+|    |    |         \--- com.fasterxml.jackson.core:jackson-databind:2.13.2 -> 2.13.2.2 (c)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.2.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.2 (*)
+|    |    +--- org.reactivestreams:reactive-streams:1.0.3
+|    |    +--- com.github.stephenc.jcip:jcip-annotations:1.0-1
+|    |    \--- com.github.spotbugs:spotbugs-annotations:3.1.12
+|    |         \--- com.google.code.findbugs:jsr305:3.0.2
+|    +--- com.datastax.oss:java-driver-shaded-guava:25.1-jre-graal-sub-1
+|    +--- com.github.stephenc.jcip:jcip-annotations:1.0-1
+|    \--- com.github.spotbugs:spotbugs-annotations:3.1.12 (*)
+\--- dev.failsafe:failsafe:3.3.2
+
+testCompileOnly - Compile only dependencies for source set 'test'. (n)
+No dependencies
+
+testImplementation - Implementation only dependencies for source set 'test'. (n)
+No dependencies
+
+testRuntimeClasspath - Runtime classpath of source set 'test'.
++--- com.scylladb:java-driver-query-builder:4.17.0.0
+|    +--- com.scylladb:java-driver-core:4.17.0.0
+|    |    +--- com.datastax.oss:native-protocol:1.5.1
+|    |    +--- io.netty:netty-handler:4.1.94.Final
+|    |    |    +--- io.netty:netty-common:4.1.94.Final
+|    |    |    +--- io.netty:netty-resolver:4.1.94.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.94.Final
+|    |    |    +--- io.netty:netty-buffer:4.1.94.Final
+|    |    |    |    \--- io.netty:netty-common:4.1.94.Final
+|    |    |    +--- io.netty:netty-transport:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.94.Final (*)
+|    |    |    |    \--- io.netty:netty-resolver:4.1.94.Final (*)
+|    |    |    +--- io.netty:netty-transport-native-unix-common:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-common:4.1.94.Final
+|    |    |    |    +--- io.netty:netty-buffer:4.1.94.Final (*)
+|    |    |    |    \--- io.netty:netty-transport:4.1.94.Final (*)
+|    |    |    \--- io.netty:netty-codec:4.1.94.Final
+|    |    |         +--- io.netty:netty-common:4.1.94.Final
+|    |    |         +--- io.netty:netty-buffer:4.1.94.Final (*)
+|    |    |         \--- io.netty:netty-transport:4.1.94.Final (*)
+|    |    +--- com.datastax.oss:java-driver-shaded-guava:25.1-jre-graal-sub-1
+|    |    +--- com.typesafe:config:1.4.1
+|    |    +--- com.github.jnr:jnr-posix:3.1.15
+|    |    |    +--- com.github.jnr:jnr-ffi:2.2.11
+|    |    |    |    +--- com.github.jnr:jffi:1.3.9
+|    |    |    |    +--- org.ow2.asm:asm:9.2
+|    |    |    |    +--- org.ow2.asm:asm-commons:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm-tree:9.2
+|    |    |    |    |    |    \--- org.ow2.asm:asm:9.2
+|    |    |    |    |    \--- org.ow2.asm:asm-analysis:9.2
+|    |    |    |    |         \--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |    +--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |    +--- org.ow2.asm:asm-util:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm:9.2
+|    |    |    |    |    +--- org.ow2.asm:asm-tree:9.2 (*)
+|    |    |    |    |    \--- org.ow2.asm:asm-analysis:9.2 (*)
+|    |    |    |    +--- com.github.jnr:jnr-a64asm:1.0.0
+|    |    |    |    \--- com.github.jnr:jnr-x86asm:1.0.2
+|    |    |    \--- com.github.jnr:jnr-constants:0.10.3
+|    |    +--- org.slf4j:slf4j-api:1.7.26 -> 1.7.30
+|    |    +--- io.dropwizard.metrics:metrics-core:4.1.18
+|    |    |    \--- org.slf4j:slf4j-api:1.7.30
+|    |    +--- org.hdrhistogram:HdrHistogram:2.1.12
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.2
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.2
+|    |    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.13.2 (c)
+|    |    |         +--- com.fasterxml.jackson.core:jackson-core:2.13.2 (c)
+|    |    |         \--- com.fasterxml.jackson.core:jackson-databind:2.13.2 -> 2.13.2.2 (c)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.13.2.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.13.2
+|    |    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.13.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.13.2 (*)
+|    |    +--- org.reactivestreams:reactive-streams:1.0.3
+|    |    +--- com.github.stephenc.jcip:jcip-annotations:1.0-1
+|    |    \--- com.github.spotbugs:spotbugs-annotations:3.1.12
+|    |         \--- com.google.code.findbugs:jsr305:3.0.2
+|    +--- com.datastax.oss:java-driver-shaded-guava:25.1-jre-graal-sub-1
+|    +--- com.github.stephenc.jcip:jcip-annotations:1.0-1
+|    \--- com.github.spotbugs:spotbugs-annotations:3.1.12 (*)
+\--- dev.failsafe:failsafe:3.3.2
+
+testRuntimeOnly - Runtime only dependencies for source set 'test'. (n)
+No dependencies
+
+(c) - A dependency constraint, not a dependency. The dependency affected by the constraint occurs elsewhere in the tree.
+(*) - Indicates repeated occurrences of a transitive dependency subtree. Gradle expands transitive dependency subtrees only once per project; repeat occurrences only display the root of the subtree, followed by this annotation.
+
+(n) - A dependency or dependency configuration that cannot be resolved.
+
+A web-based, searchable dependency report is available by adding the --scan option.
+
+BUILD SUCCESSFUL in 613ms
+1 actionable task: 1 executed
