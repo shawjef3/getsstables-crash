@@ -1,3 +1,6 @@
+import com.codahale.metrics.ConsoleReporter;
+import com.codahale.metrics.Meter;
+import com.codahale.metrics.MetricRegistry;
 import com.datastax.oss.driver.api.core.CqlSession;
 import com.datastax.oss.driver.api.core.config.DriverConfigLoader;
 import com.datastax.oss.driver.api.core.config.OptionsMap;
@@ -16,6 +19,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class GetSsTablesCrash {
 
     public static void main(String[] args) throws IOException, InterruptedException {
+        final MetricRegistry metrics = new MetricRegistry();
+        final ConsoleReporter reporter = ConsoleReporter.forRegistry(metrics).build();
+        reporter.start(5, TimeUnit.SECONDS);
+
         final int maxParallelism = 1000;
 
         int hostport;
@@ -60,7 +67,7 @@ public class GetSsTablesCrash {
         final AtomicBoolean c = new AtomicBoolean(true);
 
         Executors.newSingleThreadExecutor()
-            .execute(() -> GetSsTablesCrash.insertForever(c, hostport, maxParallelism));
+            .execute(() -> GetSsTablesCrash.insertForever(metrics, c, hostport, maxParallelism));
 
         // Run nodetool until Scylla crashes.
         Failsafe.with(
@@ -112,7 +119,14 @@ public class GetSsTablesCrash {
         );
     }
 
-    public static void insertForever(final AtomicBoolean c, final int hostport, final int maxParallelism) {
+    public static void insertForever(
+        final MetricRegistry metrics,
+        final AtomicBoolean c,
+        final int hostport,
+        final int maxParallelism
+    ) {
+        final Meter insertMeter = metrics.meter("insert");
+
         try (final CqlSession session = getSession(hostport)) {
             final Semaphore tickets = new Semaphore(maxParallelism);
 
@@ -125,7 +139,10 @@ public class GetSsTablesCrash {
                     tickets.acquire();
                 } catch (InterruptedException e) { }
                 session.executeAsync(insert.bind(i))
-                    .whenComplete((result, exception) -> tickets.release());
+                    .whenComplete((result, exception) -> {
+                        tickets.release();
+                        insertMeter.mark();
+                    });
                 i++;
             }
         }

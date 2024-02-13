@@ -14,4 +14,5 @@ repositories {
 dependencies {
     implementation 'com.scylladb:java-driver-core:4.17.0.0'
     implementation 'dev.failsafe:failsafe:3.3.2'
+    implementation 'io.dropwizard.metrics:metrics-core:4.2.25'
 }
