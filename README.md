@@ -6,13 +6,17 @@ sdk install java 8.0.402-amzn
 sdk use java 8.0.402-amzn
 ```
 
+The program also requires [docker](https://www.docker.com/).
+
 To run the program do
 
 ```bash
 ./gradlew run
 ```
 
-which should eventually print something like
+You might have to run it as `root` if your user doesn't have permission to use docker.
+
+It should eventually print something like
 
 ```
 scylla: seastar/src/core/fstream.cc:230: virtual seastar::file_data_source_impl::~file_data_source_impl(): Assertion `_reads_in_progress == 0' failed.
