@@ -1,10 +1,18 @@
 This project provides a program to reproduce https://github.com/scylladb/scylladb/issues/17232.
 
+The program requires Java. On a unix or macos machine I install [sdkman](https://sdkman.io/) and then run the following.
+```bash
+sdk install java 8.0.402-amzn
+sdk use java 8.0.402-amzn
+```
+
+To run the program do
+
 ```bash
 ./gradlew run
 ```
 
-should eventually print something like
+which should eventually print something like
 
 ```
 scylla: seastar/src/core/fstream.cc:230: virtual seastar::file_data_source_impl::~file_data_source_impl(): Assertion `_reads_in_progress == 0' failed.
