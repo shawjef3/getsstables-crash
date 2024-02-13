@@ -70,7 +70,7 @@ public class GetSsTablesCrash {
         final ScheduledExecutorService executor = Executors.newScheduledThreadPool(2);
         executor.execute(() -> GetSsTablesCrash.insertForever(metrics, c, hostport, maxParallelism));
 
-        // flushing periodically aggrevates the issue
+        // flushing periodically aggravates the issue
         executor.scheduleWithFixedDelay(() ->
             {
                 try {
